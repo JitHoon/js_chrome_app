@@ -2,7 +2,7 @@
 const a = 1;
 let b = 1;
 b = 2
-console.log(a, b)
+console.log(a, b);
 
 // null
 const c = null;
@@ -30,3 +30,13 @@ player.country = 'Korea';
 
 console.log(player);
 console.log(player.name);
+
+/* 
+    function name() {}, 
+    prompt(”질문”) = 파이썬 input()
+    typeof
+    parseInt()
+    isNaN()
+    if () {} else if () {} else {}
+    &&, ||, ===
+*/
