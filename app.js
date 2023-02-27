@@ -1,5 +1,5 @@
-loginInput = document.querySelector("#form input")
-loginBnt = document.querySelector("#form button")
+loginInput = document.querySelector("#login-form input")
+loginBnt = document.querySelector("#login-form button")
 
 function func() {
     console.log(loginInput.value)
