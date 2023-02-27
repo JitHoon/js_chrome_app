@@ -1,8 +1,9 @@
+loginForm = document.querySelector("#login-form")
 loginInput = document.querySelector("#login-form input")
-loginBnt = document.querySelector("#login-form button")
 
 function func() {
-    console.log(loginInput.value)
+    const value = loginInput.value
+    console.log(value)
 }
 
-loginBnt.addEventListener("click", func)
+loginForm.addEventListener("submit", func)
