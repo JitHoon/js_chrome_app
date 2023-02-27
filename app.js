@@ -9,6 +9,8 @@ function func(event) {
     // element.classList.add, remove를 활용한 Interation
     loginForm.classList.add("hidden");
     greeting.classList.remove("hidden");
+    // `${변수}`
+    greeting.innerText = `✨ Hello ${userName} 📣🐰`;
 };
 
 // form의 submit의 기본 동작은 브라우저를 새로고침한다.
