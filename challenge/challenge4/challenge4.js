@@ -8,10 +8,14 @@ function chrismasDday() {
     const dday = chrismas - today;
 
     // D-day 결과 가져오기 (ms*minute*hour*day)
-    const day = Math.floor(dday / (1000 * 60 * 60 * 24));
-    const hour = String(Math.floor((dday / (1000 * 60 * 60)) % 24)).padStart(2,"0");
-    const minutes = String(Math.floor((dday / (1000 * 60)) % 60)).padStart(2,"0");
-    const second = String(Math.floor((dday / 1000) % 60)).padStart(2, "0");
+    const secondsInMs = Math.floor(dday / 1000);
+    const minutesInMs = Math.floor(secondsInMs / 60);
+    const hourInMs = Math.floor(minutesInMs / 60);
+    
+    const day = Math.floor(hourInMs / 24);
+    const hour = String(hourInMs%24).padStart(2,"0");
+    const minutes = String(minutesInMs % 60).padStart(2,"0");
+    const second = String(secondsInMs % 60).padStart(2, "0");
 
     clockTitle.innerText = `${day}d ${hour}h ${minutes}m ${second}s`;
 }
