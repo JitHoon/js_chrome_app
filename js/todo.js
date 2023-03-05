@@ -6,6 +6,7 @@ const TODOS = "toDos"
 
 let toDos = []; // 수정 가능
 
+
 function toDoSave() {
     localStorage.setItem(TODOS, JSON.stringify(toDos));
 }
@@ -15,12 +16,15 @@ function toDoRemove(event) {
     // console.dir(event.target); event.target -> parentElement
     toDoTarget = event.target.parentElement;
     toDoTarget.remove();
+    toDos = toDos.filter(i => i.id !== parseInt(toDoTarget.id));
+    toDoSave();
 }
 
 function toDoCreate(newTodo) {
     const toDoLi = document.createElement("li");
+    toDoLi.id = newTodo.id;
     const toDoSpan = document.createElement("span");
-    toDoSpan.innerText = newTodo;
+    toDoSpan.innerText = newTodo.text;
     const toDoBotton = document.createElement("botton");
     toDoBotton.innerText = "𝗫";
 
@@ -33,9 +37,12 @@ function toDoCreate(newTodo) {
 
 function toDoValue(event) {
     event.preventDefault();
-    const newTodo = toDoInput.value;
-    toDos.push(newTodo)
-    toDoInput.value = ""
+    const newTodo = {
+        id: Date.now(),
+        text: toDoInput.value,
+    };
+    toDos.push(newTodo);
+    toDoInput.value = "";
     toDoCreate(newTodo);
     toDoSave();
 }
