@@ -4,7 +4,7 @@ const toDoList = document.getElementById("to-do-list");
 
 const TODOS = "toDos"
 
-const toDos = [];
+let toDos = []; // 수정 가능
 
 function toDoSave() {
     localStorage.setItem(TODOS, JSON.stringify(toDos));
@@ -46,6 +46,7 @@ const toDosLocal = localStorage.getItem(TODOS);
 
 if (toDosLocal) {
     const toDosArray = JSON.parse(toDosLocal);
+    toDos = toDosArray
     // toDosArray.forEach((item) => console.log("hi", item));
     toDosArray.forEach(toDoCreate);
 }
