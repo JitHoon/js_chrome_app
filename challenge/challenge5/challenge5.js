@@ -29,6 +29,9 @@ const colors = [
     const color1 = colors[Math.floor(Math.random() * colors.length)];
     const color2 = colors[Math.floor(Math.random() * colors.length)];
     //body.style = `background-color: ${color2}`;
+    if (color1 === color2) {
+      return changeColor()
+    }
     body.style = `background: linear-gradient(0.25turn, ${color1}, ${color2});`;
   }
   
